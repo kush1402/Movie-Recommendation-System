@@ -3,12 +3,6 @@ import pickle as pkl
 import pandas as pd
 import requests
 
-similarity_url = 'https://drive.google.com/file/d/1DRVVi4q8BmT_FGjEQWRVnUcIny0t15XX/view?usp=sharing'
-
-response = requests.get(similarity_url)
-
-with open('similarity.pkl', 'wb') as f:
-    f.write(response.content)
 similarity = pkl.load(open('similarity.pkl','rb'))
 movies = pd.read_pickle(open('movies.pkl','rb'))    
 ids_series = pd.read_pickle(open('moovie_id.pkl','rb'))
